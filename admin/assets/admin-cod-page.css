@@ -1,3 +1,13 @@
 .notice {
   display: none !important;
 }
+.forwithinrange .dash {
+  align-items: center;
+  display: flex;
+  padding: 0;
+  justify-content: center;
+  margin-top: 12px;
+}
+.forwithinrange {
+  justify-content: center;
+}

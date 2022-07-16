@@ -2,16 +2,17 @@
 ?>
 <div class="container" style=" margin-left: 0; margin-top: 60px;">
     <h3 style="margin-bottom:20px;">Cash on delivery fees</h3>
-    <button class="btn   btn-sm rounded-0 " type="button" data-toggle="tooltip" data-placement="top" title="Add rule"
-        style="margin-bottom: 10px;background: #048dcd;color: white;"><i class="fa fa-plus" aria-hidden="true"></i>New
+    <button class="btn   btn-sm rounded-0 add_new_rule" type="button" data-toggle="tooltip" data-placement="top"
+        title="Add rule" style="margin-bottom: 10px;background: #048dcd;color: white;"><i class="fa fa-plus"
+            aria-hidden="true"></i>New
         rule</button>
     <form id="cod_rules" action="" method="post" enctype="multipart/form-data">
 
-        <div class="form-row">
+        <div class="form-row rule">
             <div class="form-group col-md-3">
                 <!-- rule_format -->
                 <label for="rule_format">If total is</label>
-                <select name="rule_format" class="form-control">
+                <select name="rule_format" class="rule_format form-control">
                     <option selected>Select...</option>
                     <option value="is_G">greater than</option>
                     <option value="is_L">less than</option>
@@ -19,30 +20,12 @@
                 </select>
             </div>
             <div class="dynamic_position col-md-4">
-                <div class="form-group " style="display:none;">
+                <div class="form-group forgreaterandless">
                     <!-- rule_amount -->
                     <label for="rule_amount">Amount</label>
                     <input type="text" class="form-control" name="rule_amount">
                 </div>
-                <div class="row" style=" justify-content: center; ">
-                    <div class="form-group col-md-5">
-                        <!-- rule_amount_from -->
-                        <label for="rule_amount_from">From</label>
-                        <input type="text" class="form-control" name="rule_amount_from">
-                    </div>
-                    <div class=" col-md-1" style="
-                        align-items: center;
-                        display: flex;
-                        padding: 0;
-                        justify-content: center;
-                        margin-top: 12px;
-                    ">—</div>
-                    <div class="form-group col-md-5">
-                        <!-- rule_amount_to -->
-                        <label for="rule_amount_to">To</label>
-                        <input type="text" class="form-control" name="rule_amount_to">
-                    </div>
-                </div>
+
             </div>
 
             <div class="form-group col-md-3">
