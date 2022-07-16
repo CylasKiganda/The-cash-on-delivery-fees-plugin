@@ -1,9 +1,9 @@
 <?php
 /*
-* Plugin Name: Cash on delivery payment option fees
-* Plugin URI: https://futuremediahouse.jp/
+* Plugin Name: BELO woocommerce cash on delivery payment gateway fees
+* Plugin URI: https://github.com/CylasKiganda/cash-on-delivery-fees
 * Description: Adding custom Cash on Delivery fees 
-* Author: Kiganda Cylas a.k.a Belo
+* Author: BELO
   Author URI: linkedin.com/in/kiganda-c-4525a1179
 * Version: 1.0.0
 * Domain: cod-fee
