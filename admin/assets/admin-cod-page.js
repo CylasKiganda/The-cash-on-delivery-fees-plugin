@@ -33,7 +33,10 @@ jQuery(document).ready(($) => {
   // on click delete button
   $(document).on("click", ".delete_rule", function (e) {
     e.preventDefault();
-    console.log(this);
-    $(this).parents(".rule").remove();
+    if ($(".rules_container").children(".rule").length > 1) {
+      $(this).parents(".rule").remove();
+    } else {
+      alert("Should have atleast one rule. You can instead disable it.");
+    }
   });
 });

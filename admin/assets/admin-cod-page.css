@@ -11,3 +11,10 @@
 .forwithinrange {
   justify-content: center;
 }
+.delete_rule {
+  background: #ffffff !important;
+  margin-top: 31px;
+}
+.delete_rule .fa-trash {
+  color: red !important;
+}
