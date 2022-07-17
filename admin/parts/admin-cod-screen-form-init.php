@@ -13,9 +13,9 @@
             <div class="form-row rule">
                 <div class="form-group col-md-3">
                     <!-- rule_format -->
-                    <label for="rule_format[]">If total is</label>
+                    <label for="rule_format[]">If order total is</label>
                     <select name="rule_format[]" class="rule_format form-control">
-                        <option value="" selected>Select...</option>
+                        <option value="null" selected>Select...</option>
                         <option value="is_G">greater than</option>
                         <option value="is_L">less than</option>
                         <option value="is_R">within a range of</option>

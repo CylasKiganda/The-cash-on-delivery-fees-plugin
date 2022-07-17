@@ -18,3 +18,6 @@
 .delete_rule .fa-trash {
   color: red !important;
 }
+.rule_format {
+  height: 38px !important;
+}

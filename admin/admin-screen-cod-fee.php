@@ -27,8 +27,8 @@ function cod_admin_enqueue_scripts() {
     if($screen->base=="toplevel_page_belo_main"){
         wp_enqueue_style( 'admin-cod-font-awesome','https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css', false, '1.0' );
         wp_enqueue_style( 'admin-cod-bootstrapcss','https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css', false, '1.0' );
-        wp_enqueue_style('admin-cod-page-styles', plugin_dir_url( __FILE__ ) . '/assets/admin-cod-page.css' , '1.4', false);
-        wp_enqueue_script('admin-cod-page-js', plugin_dir_url( __FILE__ ) . '/assets/admin-cod-page.js', array('jquery'), '1.3', false);
+        wp_enqueue_style('admin-cod-page-styles', plugin_dir_url( __FILE__ ) . '/assets/admin-cod-page.css' , '1.5', false);
+        wp_enqueue_script('admin-cod-page-js', plugin_dir_url( __FILE__ ) . '/assets/admin-cod-page.js', array('jquery'), '1.4', false);
         wp_enqueue_script('admin-bootstrapjs-page', 'https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js', array('jquery'), '1.0', true);
         
     }
