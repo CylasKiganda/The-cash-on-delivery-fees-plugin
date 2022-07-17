@@ -23,8 +23,17 @@ jQuery(document).ready(($) => {
   // on click new_rule button
   $(document).on("click", ".add_new_rule", function () {
     let parent_form = $("#cod_rules");
-    $(
-      '<div class="form-row rule"> <div class="form-group col-md-3"> <!-- rule_format --> <label for="rule_format">If total is</label> <select name="rule_format" class="rule_format form-control"> <option selected="">Select...</option> <option value="is_G">greater than</option> <option value="is_L">less than</option> <option value="is_R">within a range of</option> </select> </div> <div class="dynamic_position col-md-4"> <div class="form-group forgreaterandless"> <!-- rule_amount --> <label for="rule_amount">Amount</label> <input type="text" class="form-control" name="rule_amount"> </div></div> <div class="form-group col-md-3"> <!-- rule_fee --> <label for="rule_fee">Add fee</label> <input type="text" class="form-control" name="rule_fee"> </div> <!-- Action buttons --> <div class="form-group col-md-2 action-buttons" style=" display: flex; flex-direction: row; justify-content: start; align-items: end; "> <ul class="list-inline m-0" style=" padding: 0px; "> <li class="list-inline-item" style="margin: 2px !important;"> <button class="btn btn-danger btn-sm rounded-5 " type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash" aria-hidden="true"></i></button> </li> </ul> </div> </div>'
-    ).insertAfter(parent_form.find(".rule").last());
+    parent_form
+      .find(".rules_container")
+      .append(
+        '<div class="form-row rule"> <div class="form-group col-md-3"> <!-- rule_format --> <label for="rule_format[]">If total is</label> <select name="rule_format[]" class="rule_format form-control"> <option selected="">Select...</option> <option value="is_G">greater than</option> <option value="is_L">less than</option> <option value="is_R">within a range of</option> </select> </div> <div class="dynamic_position col-md-4"> <div class="form-group forgreaterandless"> <!-- rule_amount --> <label for="rule_amount[]">Amount</label> <input type="text" class="form-control" name="rule_amount[]"> </div></div> <div class="form-group col-md-3"> <!-- rule_fee --> <label for="rule_fee[]">Add fee</label> <input type="text" class="form-control" name="rule_fee[]"> </div> <!-- Action buttons --> <div class="form-group col-md-2 action-buttons" style=" display: flex; flex-direction: row; justify-content: start; align-items: end; "> <ul class="list-inline m-0" style=" padding: 0px; "> <li class="list-inline-item" style="margin: 2px !important;"> <button class="btn btn-danger btn-sm rounded-5 delete_rule" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash" aria-hidden="true"></i></button> </li> </ul> </div> </div>'
+      );
+  });
+
+  // on click delete button
+  $(document).on("click", ".delete_rule", function (e) {
+    e.preventDefault();
+    console.log(this);
+    $(this).parents(".rule").remove();
   });
 });

@@ -28,7 +28,7 @@ function cod_admin_enqueue_scripts() {
         wp_enqueue_style( 'admin-cod-font-awesome','https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css', false, '1.0' );
         wp_enqueue_style( 'admin-cod-bootstrapcss','https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css', false, '1.0' );
         wp_enqueue_style('admin-cod-page-styles', plugin_dir_url( __FILE__ ) . '/assets/admin-cod-page.css' , '1.1', true);
-        wp_enqueue_script('admin-cod-page-js', plugin_dir_url( __FILE__ ) . '/assets/admin-cod-page.js', array('jquery'), '1.0', true);
+        wp_enqueue_script('admin-cod-page-js', plugin_dir_url( __FILE__ ) . '/assets/admin-cod-page.js', array('jquery'), '1.3', true);
         wp_enqueue_script('admin-bootstrapjs-page', 'https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js', array('jquery'), '1.0', true);
         
     }
@@ -43,12 +43,6 @@ function admin_cod_screen_callback() {
     else{
         require_once(COD_PLUGIN_PATH .'admin/parts/admin-cod-screen-form-data.php');
     }  
-    var_dump(get_current_screen());
-    if (isset($_POST['submit'])) { 
-        if (isset($_POST['rule_fee'])) {
-            var_dump($_POST);
-            
-        }
-        
-    } 
+    
+    require_once(COD_PLUGIN_PATH .'admin/parts/process.php');
 } 
