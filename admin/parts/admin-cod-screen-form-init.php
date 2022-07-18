@@ -33,14 +33,14 @@
                     <div class="form-group forgreaterandless">
                         <!-- rule_amount -->
                         <label for="rule_amount[]">Amount</label>
-                        <input type="text" class="form-control" name="rule_amount[]">
+                        <input type="text" class="form-control" name="rule_amount[]" disabled="disabled">
                     </div>
                 </div>
 
                 <div class="form-group col-md-3">
                     <!-- rule_fee -->
                     <label for="rule_fee[]">Add fee</label>
-                    <input type="text" class="form-control" name="rule_fee[]">
+                    <input type="text" class="form-control" name="rule_fee[]" disabled="disabled">
                 </div>
                 <!-- Action buttons -->
                 <div class="form-group col-md-2 action-buttons"
