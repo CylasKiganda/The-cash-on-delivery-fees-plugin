@@ -9,7 +9,7 @@
         rule</button>
 
 
-    <form id="cod_rules" method="POST" enctype="multipart/form-data">
+    <form id="cod_rules" method="POST" enctype="multipart/form-data" class="was-validated">
         <!-- rule_enable_switch Default checked -->
         <div class="custom-control custom-switch" style=" margin: 20px 0px; ">
             <input type="checkbox" class="custom-control-input" id="customSwitch1" name="rule_enable_switch" checked>
@@ -33,14 +33,14 @@
                     <div class="form-group forgreaterandless">
                         <!-- rule_amount -->
                         <label for="rule_amount[]">Amount</label>
-                        <input type="text" class="form-control" name="rule_amount[]" disabled="disabled">
+                        <input type="text" class="form-control" name="rule_amount[]" disabled="disabled" required>
                     </div>
                 </div>
 
                 <div class="form-group col-md-3">
                     <!-- rule_fee -->
                     <label for="rule_fee[]">Add fee</label>
-                    <input type="text" class="form-control" name="rule_fee[]" disabled="disabled">
+                    <input type="text" class="form-control" name="rule_fee[]" disabled="disabled" required>
                 </div>
                 <!-- Action buttons -->
                 <div class="form-group col-md-2 action-buttons"

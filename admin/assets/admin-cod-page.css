@@ -21,3 +21,11 @@
 .rule_format {
   height: 38px !important;
 }
+.form-control.is-valid,
+.was-validated .form-control:valid {
+  border-color: #8c8f94 !important;
+  background-image: unset !important;
+}
+label {
+  color: #303030 !important;
+}
