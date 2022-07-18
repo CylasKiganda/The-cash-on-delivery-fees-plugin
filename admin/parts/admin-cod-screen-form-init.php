@@ -2,11 +2,19 @@
 ?>
 <div class="container" style=" margin-left: 0; margin-top: 60px;">
     <h3 style="margin-bottom:20px;">Cash on delivery fees</h3>
+
     <button class="btn   btn-sm rounded-0 add_new_rule" type="button" data-toggle="tooltip" data-placement="top"
         title="Add rule" style="margin-bottom: 10px;background: #048dcd;color: white;"><i class="fa fa-plus"
             aria-hidden="true"></i>New
         rule</button>
+
+
     <form id="cod_rules" method="POST" enctype="multipart/form-data">
+        <!-- rule_enable_switch Default checked -->
+        <div class="custom-control custom-switch" style=" margin: 20px 0px; ">
+            <input type="checkbox" class="custom-control-input" id="customSwitch1" name="rule_enable_switch" checked>
+            <label class="custom-control-label" for="customSwitch1">Enable Rules</label>
+        </div>
         <div class="rules_container">
             <!-- <input type="hidden" name="updated" value="true" />
             <?php wp_nonce_field( 'custom_cod_rules_update', 'custom_cod_rules_form' ); ?> -->
@@ -27,7 +35,6 @@
                         <label for="rule_amount[]">Amount</label>
                         <input type="text" class="form-control" name="rule_amount[]">
                     </div>
-
                 </div>
 
                 <div class="form-group col-md-3">

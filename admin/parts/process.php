@@ -1,5 +1,7 @@
 <?php
  if( $_POST['submit'] ){
+
+    print_r($_POST['rule_enable_switch']); 
     if( $_POST["rule_format"]){
         $number = count($_POST["rule_format"]);  
         print_r($number);    

@@ -36,7 +36,7 @@ function cod_admin_enqueue_scripts() {
 }
 
 
-function admin_cod_screen_callback() {
+function admin_cod_screen_callback() { 
     if(!get_option("belo_cod_rules_data")){
         require_once(COD_PLUGIN_PATH .'admin/parts/admin-cod-screen-form-init.php');
     }
