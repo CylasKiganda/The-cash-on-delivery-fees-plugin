@@ -7,6 +7,7 @@
   padding: 0;
   justify-content: center;
   margin-top: 12px;
+  max-width: 1px !important;
 }
 .forwithinrange {
   justify-content: center;
@@ -21,12 +22,16 @@
 .rule_format {
   height: 38px !important;
 }
-.form-control.is-valid,
-.was-validated .form-control:valid {
+
+.was-validated select.form-control:valid {
   border-color: #8c8f94 !important;
   background: #fff
     url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M5%206l5%205%205-5%202%201-7%207-7-7%202-1z%22%20fill%3D%22%23555%22%2F%3E%3C%2Fsvg%3E")
     no-repeat right 5px top 55% !important;
+}
+
+.was-validated input[type="text"].form-control:valid {
+  background-image: unset !important;
 }
 .custom-control-input.is-valid ~ .custom-control-label::before,
 .was-validated .custom-control-input:valid ~ .custom-control-label::before {

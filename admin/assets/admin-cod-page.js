@@ -53,6 +53,9 @@ jQuery(document).ready(($) => {
   function iputvalidation() {
     var $input = $(this);
     $input.val($input.val().replace(/[^\d]+/g, ""));
+    if ($input.hasClass("rule_error")) {
+      $input.removeClass("rule_error");
+    }
   }
   $(document).on("propertychange input", 'input[type="text"]', iputvalidation);
 
@@ -60,9 +63,23 @@ jQuery(document).ready(($) => {
   $("form").submit(function (e) {
     var validationStatus = false;
     // do your validation here ...
+    $("form .rule").each(function () {
+      if ($(this).find(".forwithinrange").length > 0) {
+        var from = $(this).find("input[name='rule_amount_from']").val();
+        var to = $(this).find("input[name='rule_amount_to']").val();
+
+        if (parseInt(to) < parseInt(from)) {
+          $(this).find("input[name='rule_amount_to']").addClass("rule_error");
+        } else {
+          $(this)
+            .find("input[name='rule_amount_to']")
+            .removeClass("rule_error");
+        }
+      }
+    });
     if (!validationStatus) {
       e.preventDefault();
-      alert("errors!");
+      //alert("errors!");
       return false;
     }
   });
