@@ -61,7 +61,7 @@ jQuery(document).ready(($) => {
 
   // form validations
   $("form").submit(function (e) {
-    var validationStatus = false;
+    var validationStatus = true;
     // do your validation here ...
     $("form .rule").each(function () {
       if ($(this).find(".forwithinrange").length > 0) {
@@ -70,6 +70,7 @@ jQuery(document).ready(($) => {
 
         if (parseInt(to) < parseInt(from)) {
           $(this).find("input[name='rule_amount_to']").addClass("rule_error");
+          validationStatus = false;
         } else {
           $(this)
             .find("input[name='rule_amount_to']")
@@ -79,7 +80,7 @@ jQuery(document).ready(($) => {
     });
     if (!validationStatus) {
       e.preventDefault();
-      //alert("errors!");
+      alert("The 'To' value must be larger than the 'From'.");
       return false;
     }
   });
