@@ -12,7 +12,8 @@
     <form id="cod_rules" method="POST" enctype="multipart/form-data" class="was-validated">
         <!-- rule_enable_switch Default checked -->
         <div class="custom-control custom-switch" style=" margin: 20px 0px; ">
-            <input type="checkbox" class="custom-control-input" id="customSwitch1" name="rule_enable_switch" checked>
+            <input type="checkbox" class="custom-control-input" id="customSwitch1" name="rule_enable_switch"
+                <?php if(get_option('rule_enable_switch',$_POST['rule_enable_switch'])) echo " checked";?>>
             <label class="custom-control-label" for="customSwitch1">Enable Rules</label>
         </div>
         <div class="rules_container">
@@ -21,11 +22,15 @@
             <div class="form-row rule">
                 <div class="form-group col-md-3">
                     <!-- rule_format -->
-                    <label for="rule_format[]">If order total is</label>
-                    <select name="rule_format[]" class="rule_format form-control">
-                        <option value="null" selected>Select...</option>
-                        <option value="is_G">greater than</option>
-                        <option value="is_L">less than</option>
+                    <label for="rule_format[]">If checkout total is</label>
+                    <select name="rule_format[]" class="rule_format form-control" required>
+                        <option value="" selected>Select...</option>
+                        <option value="is_equal_to">Equal to ( = )</option>
+                        <option value="less_equal_to">Less or Equal to ( &lt;= )</option>
+                        <option value="less_then">Less then ( &lt; )</option>
+                        <option value="greater_equal_to">greater or Equal to ( &gt;= )</option>
+                        <option value="greater_then">greater then ( &gt; )</option>
+                        <option value="not_in">Not Equal to ( != )</option>
                         <option value="is_R">within a range of</option>
                     </select>
                 </div>

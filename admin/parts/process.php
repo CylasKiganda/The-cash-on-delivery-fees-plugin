@@ -2,7 +2,7 @@
  if( $_POST['submit'] ){
 
     print_r($_POST['rule_enable_switch']); 
-    print_r($_POST); 
+    update_option('rule_enable_switch',$_POST['rule_enable_switch']); 
     if( isset($_POST["rule_format"])){
         $number = count($_POST["rule_format"]);  
         print_r($number);    
