@@ -1,14 +1,15 @@
 <?php
  if( $_POST['submit'] ){
 
-    print_r($_POST['rule_enable_switch']); 
+     
     update_option('rule_enable_switch',$_POST['rule_enable_switch']); 
+    $added_rules= array();
     if( isset($_POST["rule_format"])){
         $number = count($_POST["rule_format"]);  
-        print_r($number);    
+        
     if($number > 0)  
     {  
-        $added_rules= array();
+        
          for($i=0; $i<$number; $i++)  
          {  
             $_rule= array();
@@ -28,11 +29,12 @@
               array_push($added_rules,$_rule);
             }
             
-         }
-         print_r($added_rules);    
+         }    
+         
     }
+
     }
-     
+     update_option('belo_cod_rules_data',$added_rules); 
     
 } 
   

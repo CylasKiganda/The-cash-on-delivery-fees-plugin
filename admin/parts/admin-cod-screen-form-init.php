@@ -64,3 +64,6 @@
             style=" background: #048dcd;color: white; border:0;padding: 6px 40px;">
     </form>
 </div>
+
+<?php
+include(COD_PLUGIN_PATH .'admin/parts/process.php');

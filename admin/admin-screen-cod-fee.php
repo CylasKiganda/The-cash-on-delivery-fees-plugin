@@ -44,5 +44,5 @@ function admin_cod_screen_callback() {
         require_once(COD_PLUGIN_PATH .'admin/parts/admin-cod-screen-form-data.php');
     }  
     
-    require_once(COD_PLUGIN_PATH .'admin/parts/process.php');
+    
 } 
