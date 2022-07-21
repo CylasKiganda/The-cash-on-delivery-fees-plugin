@@ -2,7 +2,8 @@
  if( $_POST['submit'] ){
 
     print_r($_POST['rule_enable_switch']); 
-    if( $_POST["rule_format"]){
+    print_r($_POST); 
+    if( isset($_POST["rule_format"])){
         $number = count($_POST["rule_format"]);  
         print_r($number);    
     if($number > 0)  
@@ -11,7 +12,7 @@
          for($i=0; $i<$number; $i++)  
          {  
             $_rule= array();
-              if(trim($_POST["rule_format"][$i] != 'null'))  
+              if(trim($_POST["rule_format"][$i] != ''))  
               {  
                 if($_POST["rule_format"][$i] == "is_R"){
                     $_rule["rule_format"]=$_POST["rule_format"][$i];
