@@ -1,5 +1,7 @@
 <?php 
-
+if(get_option('belo_cod_rules_data',$added_rules)):
+  foreach(get_option('belo_cod_rules_data',$added_rules) as $rule):
+  
 ?>
 <div class="rules_container">
     <!-- <input type="hidden" name="updated" value="true" />
@@ -9,27 +11,38 @@
             <!-- rule_format -->
             <label for="rule_format[]">If checkout total is</label>
             <select name="rule_format[]" class="rule_format form-control" required>
-                <option value="" selected>Select...</option>
-                <option value="is_equal_to">Equal to ( = )</option>
-                <option value="less_equal_to">Less or Equal to ( &lt;= )</option>
-                <option value="less_then">Less then ( &lt; )</option>
-                <option value="greater_equal_to">greater or Equal to ( &gt;= )</option>
-                <option value="greater_then">greater then ( &gt; )</option>
-                <option value="not_in">Not Equal to ( != )</option>
+                <option value="">Select...</option>
+                <option value="is_equal_to" <?php if($rule["rule_format"] == "is_equal_to") {echo " selected";}
+                     ?>>
+                    Equal
+                    to (
+                    = )</option>
+                <option value="less_equal_to" <?php if($rule["rule_format"] == "less_equal_to") {echo " selected";}
+                     ?>>Less or Equal to ( &lt;= )</option>
+                <option value="less_then" <?php if($rule["rule_format"] == "less_then") {echo " selected";}
+                     ?>>Less then ( &lt; )</option>
+                <option value="greater_equal_to" <?php if($rule["rule_format"] == "greater_equal_to") {echo " selected";}
+                     ?>>greater or Equal to ( &gt;= )</option>
+                <option value="greater_then" <?php if($rule["rule_format"] == "greater_then") {echo " selected";}
+                     ?>>greater then ( &gt; )</option>
+                <option value="not_in" <?php if($rule["rule_format"] == "not_in") {echo " selected";}
+                     ?>>Not Equal to ( != )</option>
             </select>
         </div>
         <div class="dynamic_position col-md-4">
             <div class="form-group forgreaterandless">
                 <!-- rule_amount -->
                 <label for="rule_amount[]">Amount</label>
-                <input type="text" class="form-control" name="rule_amount[]" disabled="disabled" required>
+                <input type="text" class="form-control" name="rule_amount[]" value="<?php if($rule["rule_amount"] ) {echo $rule["rule_amount"];}
+                     ?>" required>
             </div>
         </div>
 
         <div class="form-group col-md-3">
             <!-- rule_fee -->
             <label for="rule_fee[]">Add fee</label>
-            <input type="text" class="form-control" name="rule_fee[]" disabled="disabled" required>
+            <input type="text" class="form-control" name="rule_fee[]" value="<?php if($rule["rule_fee"] ) {echo $rule["rule_fee"];}
+                     ?>" required>
         </div>
         <!-- Action buttons -->
         <div class="form-group col-md-2 action-buttons"
@@ -43,3 +56,8 @@
         </div>
     </div>
 </div>
+<?php
+
+                    endforeach;
+endif;
+?>

@@ -3,12 +3,6 @@ jQuery(document).ready(($) => {
   $(document).on("change", ".rule_format", function () {
     let dynamic_section = $(this).parent().parent().find(".dynamic_position");
 
-    if (!dynamic_section.find(".forgreaterandless").length > 0) {
-      dynamic_section.find(".forwithinrange").remove();
-      dynamic_section.append(
-        '<div class="form-group forgreaterandless"> <!-- rule_amount --> <label for="rule_amount">Amount</label> <input type="text" class="form-control" name="rule_amount"  required> </div>'
-      );
-    }
     if (this.value != "") {
       $(this).parent().parent().find("input").removeAttr("disabled");
     } else {
@@ -56,21 +50,6 @@ jQuery(document).ready(($) => {
   $("form").submit(function (e) {
     var validationStatus = true;
     // do your validation here ...
-    $("form .rule").each(function () {
-      if ($(this).find(".forwithinrange").length > 0) {
-        var from = $(this).find("input[name='rule_amount_from']").val();
-        var to = $(this).find("input[name='rule_amount_to']").val();
-
-        if (parseInt(to) < parseInt(from)) {
-          $(this).find("input[name='rule_amount_to']").addClass("rule_error");
-          validationStatus = false;
-        } else {
-          $(this)
-            .find("input[name='rule_amount_to']")
-            .removeClass("rule_error");
-        }
-      }
-    });
     if (!validationStatus) {
       e.preventDefault();
       alert("The 'To' value must be larger than the 'From'.");
