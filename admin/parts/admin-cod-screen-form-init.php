@@ -1,7 +1,7 @@
 <?php
 include(COD_PLUGIN_PATH .'admin/parts/process.php');
-print_r(get_option('belo_cod_rules_data',$added_rules));
-//print_r($added_rules);
+
+
 ?>
 <div class="container" style=" margin-left: 0; margin-top: 60px;">
     <h3 style="margin-bottom:20px;">Cash on delivery fees</h3>

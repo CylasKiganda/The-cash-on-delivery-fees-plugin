@@ -15,7 +15,6 @@
                 <option value="greater_equal_to">greater or Equal to ( &gt;= )</option>
                 <option value="greater_then">greater then ( &gt; )</option>
                 <option value="not_in">Not Equal to ( != )</option>
-                <option value="is_R">within a range of</option>
             </select>
         </div>
         <div class="dynamic_position col-md-4">

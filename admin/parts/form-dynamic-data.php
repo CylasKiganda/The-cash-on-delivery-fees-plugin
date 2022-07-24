@@ -1,11 +1,15 @@
 <?php 
 if(get_option('belo_cod_rules_data',$added_rules)):
-  foreach(get_option('belo_cod_rules_data',$added_rules) as $rule):
+    
   
 ?>
 <div class="rules_container">
     <!-- <input type="hidden" name="updated" value="true" />
             <?php wp_nonce_field( 'custom_cod_rules_update', 'custom_cod_rules_form' ); ?> -->
+    <?php  
+  foreach(get_option('belo_cod_rules_data',$added_rules) as $rule):
+  
+?>
     <div class="form-row rule">
         <div class="form-group col-md-3">
             <!-- rule_format -->
@@ -55,9 +59,10 @@ if(get_option('belo_cod_rules_data',$added_rules)):
             </ul>
         </div>
     </div>
+    <?php  
+  endforeach; 
+    ?>
 </div>
-<?php
-
-                    endforeach;
+<?php                 
 endif;
 ?>
