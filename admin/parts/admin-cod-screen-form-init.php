@@ -19,6 +19,12 @@ include(COD_PLUGIN_PATH .'admin/parts/process.php');
                 <?php if(get_option('rule_enable_switch',$_POST['rule_enable_switch'])) echo " checked";?>>
             <label class="custom-control-label" for="customSwitch1">Enable Rules</label>
         </div>
+        <div class="form-group col-md-3" style=" padding-left: 0; padding-right: 6px; margin-bottom: 20px; ">
+            <!-- cod_rule_name -->
+            <label for="cod_rule_name">Fee name</label>
+            <input type="text" class="form-control" name="cod_rule_name" required
+                value="<?php if(get_option('cod_rule_name',$_POST['cod_rule_name'])){ echo get_option('cod_rule_name',$_POST['cod_rule_name']);} else{echo "Cash on delivery fee";}?>">
+        </div>
         <?php
         if(get_option('belo_cod_rules_data',$added_rules)):
             include(COD_PLUGIN_PATH .'admin/parts/form-dynamic-data.php');
