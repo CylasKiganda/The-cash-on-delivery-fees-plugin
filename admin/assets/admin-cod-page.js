@@ -39,7 +39,10 @@ jQuery(document).ready(($) => {
 
   function iputvalidation() {
     var $input = $(this);
-    $input.val($input.val().replace(/[^\d]+/g, ""));
+    if (!$input.hasClass("cod_rules_names")) {
+      $input.val($input.val().replace(/[^\d]+/g, ""));
+    }
+
     if ($input.hasClass("rule_error")) {
       $input.removeClass("rule_error");
     }

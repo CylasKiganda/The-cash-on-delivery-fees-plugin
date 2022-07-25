@@ -22,7 +22,7 @@ include(COD_PLUGIN_PATH .'admin/parts/process.php');
         <div class="form-group col-md-3" style=" padding-left: 0; padding-right: 6px; margin-bottom: 20px; ">
             <!-- cod_rule_name -->
             <label for="cod_rule_name">Fee name</label>
-            <input type="text" class="form-control" name="cod_rule_name" required
+            <input type="text" class="form-control cod_rules_names" name="cod_rule_name" required
                 value="<?php if(get_option('cod_rule_name',$_POST['cod_rule_name'])){ echo get_option('cod_rule_name',$_POST['cod_rule_name']);} else{echo "Cash on delivery fee";}?>">
         </div>
         <?php

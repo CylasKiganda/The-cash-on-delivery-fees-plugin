@@ -1,5 +1,6 @@
 <?php
  if( $_POST['submit'] ){ 
+    update_option('cod_rule_name',$_POST['cod_rule_name']); 
     update_option('rule_enable_switch',$_POST['rule_enable_switch']); 
     $added_rules= array();
     if( isset($_POST["rule_format"])){
