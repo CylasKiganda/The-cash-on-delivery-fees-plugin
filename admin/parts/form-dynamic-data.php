@@ -1,5 +1,5 @@
-<?php 
-if(get_option('belo_cod_rules_data',$added_rules)):
+<?php  
+if(get_option('belo_cod_rules_data')):
     
   
 ?>
@@ -7,7 +7,7 @@ if(get_option('belo_cod_rules_data',$added_rules)):
     <!-- <input type="hidden" name="updated" value="true" />
             <?php wp_nonce_field( 'custom_cod_rules_update', 'custom_cod_rules_form' ); ?> -->
     <?php  
-  foreach(get_option('belo_cod_rules_data',$added_rules) as $rule):
+  foreach(get_option('belo_cod_rules_data') as $rule):
   
 ?>
     <div class="form-row rule">

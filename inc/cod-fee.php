@@ -14,16 +14,54 @@ function cod_add_checkout_fee_for_gateway( $cart ) {
         
         $total = cod_get_cart_total( $cart );
 
-        switch( true ){
-            case ( $total < 1252 )  : $fee = 850; break;
-            case ( $total < 29633 )  : $fee = 1730; break;
-            case ( $total < 456666 ) : $fee = 3730; break;
-            case ( $total <= 723666 ) : $fee = 7840; break; 
-            default: $fee = false;
-        }
-
+        $cod_rules = get_option('belo_cod_rules_data'); 
+        $fee = false;
+        foreach($cod_rules as $cdrule){
+            if($cdrule['rule_format']=='is_equal_to'){
+                if($total == $cdrule['rule_amount']){
+                    $fee = $cdrule['rule_fee']; 
+                    break;
+                }
+            }
+            elseif($cdrule['rule_format']=='less_equal_to'){
+                if($total <= $cdrule['rule_amount']){
+                    $fee = $cdrule['rule_fee']; 
+                    break;
+                }
+            }
+            elseif($cdrule['rule_format']=='less_then'){
+                if($total < $cdrule['rule_amount']){
+                    $fee = $cdrule['rule_fee']; 
+                    break;
+                }
+            }
+            elseif($cdrule['rule_format']=='greater_equal_to'){
+                if($total >= $cdrule['rule_amount']){
+                    $fee = $cdrule['rule_fee']; 
+                    break;
+                }
+            }
+            elseif($cdrule['rule_format']=='greater_then'){
+                if($total > $cdrule['rule_amount']){
+                    $fee = $cdrule['rule_fee']; 
+                    break;
+                }
+            }
+            elseif($cdrule['rule_format']=='not_in'){
+                if($total != $cdrule['rule_amount']){
+                    $fee = $cdrule['rule_fee']; 
+                    break;
+                }
+            }
+        }  
         if ( false !== $fee ) {
-            $fee_name = __( 'Cash on delivery fees', 'woocommerce' );
+            if(!empty(get_option('cod_rule_name'))){
+                $fee_name =get_option('cod_rule_name');
+            }
+            else{
+                $fee_name = __( 'Cash on delivery fees', 'woocommerce' );
+            }
+           
             $cart->add_fee( $fee_name, $fee, false );
         }
 	}
