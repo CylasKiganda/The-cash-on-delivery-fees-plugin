@@ -27,4 +27,4 @@ define('COD_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
 define('COD_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
 require_once(COD_PLUGIN_PATH .'admin/admin-screen-cod-fee.php');
-require_once(COD_PLUGIN_PATH .'inc/cod-fee.php');
+require_once(COD_PLUGIN_PATH .'inc/final-implement-cod-fee.php');
