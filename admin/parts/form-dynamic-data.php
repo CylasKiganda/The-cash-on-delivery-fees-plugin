@@ -7,7 +7,8 @@ if(get_option('belo_cod_rules_data')):
     <!-- <input type="hidden" name="updated" value="true" />
             <?php wp_nonce_field( 'custom_cod_rules_update', 'custom_cod_rules_form' ); ?> -->
     <?php  
-  foreach(get_option('belo_cod_rules_data') as $rule):
+    $rules_data= get_option('belo_cod_rules_data');
+  foreach( $rules_data as $rule):
   
 ?>
     <div class="form-row rule">
