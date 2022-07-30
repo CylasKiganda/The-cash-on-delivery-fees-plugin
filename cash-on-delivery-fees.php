@@ -12,13 +12,13 @@
 
 defined( 'ABSPATH' ) || exit;
 
-$cod_active_plugins = apply_filters( 'active_plugins', get_option( 'active_plugins' ) );
+$check_active_plugins = apply_filters( 'active_plugins', get_option( 'active_plugins' ) );
 $cod_required_plugins = array(
-  "woocommerce/woocommerce.php",
+  "woocommerce/woocommerce.php", 
 );
 
 foreach ($cod_required_plugins as $required_plugin) {
-  if ( ! in_array( $required_plugin, $cod_active_plugins ) ) {
+  if ( ! in_array( $required_plugin, $check_active_plugins ) ) {
     return;
   }
 }
